@@ -223,13 +223,13 @@
 /**
  * M355 Case Light on-off / brightness
  */
-//#define CASE_LIGHT_ENABLE
+#define CASE_LIGHT_ENABLE
 #if ENABLED(CASE_LIGHT_ENABLE)
-  #define CASE_LIGHT_PIN 4          // can be defined here or in the pins_XXX.h file for your board
+  #define CASE_LIGHT_PIN 11          // can be defined here or in the pins_XXX.h file for your board
                                     //  pins_XXX.h file overrides this one
   #define INVERT_CASE_LIGHT false             // set to true if case light is ON when pin is at 0
   #define CASE_LIGHT_DEFAULT_ON true          // set default power up state to on or off
-  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 105   // set power up brightness 0-255 ( only used if on PWM
+  #define CASE_LIGHT_DEFAULT_BRIGHTNESS 255   // set power up brightness 0-255 ( only used if on PWM
                                               // and if CASE_LIGHT_DEFAULT is set to on
   //#define MENU_ITEM_CASE_LIGHT              // Uncomment to have a Case Light entry in main menu
 #endif
@@ -269,9 +269,12 @@
 // A single Z stepper driver is usually used to drive 2 stepper motors.
 // Uncomment this option to use a separate stepper driver for each Z axis motor.
 // The next unused E driver will be assigned to the second Z stepper.
-//#define Z_DUAL_STEPPER_DRIVERS
+#define Z_DUAL_STEPPER_DRIVERS
 
 #if ENABLED(Z_DUAL_STEPPER_DRIVERS)
+#define Z2_STEP_PIN E2_STEP_PIN // Stepper to be used to Z2 axis.
+#define Z2_DIR_PIN E2_DIR_PIN
+#define Z2_ENABLE_PIN E2_ENABLE_PIN
 
   // Z_DUAL_ENDSTOPS is a feature to enable the use of 2 endstops for both Z steppers - Let's call them Z stepper and Z2 stepper.
   // That way the machine is capable to align the bed during home, since both Z steppers are homed.

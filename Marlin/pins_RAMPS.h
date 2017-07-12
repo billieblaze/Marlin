@@ -62,9 +62,9 @@
 #else
   #define SERVO0_PIN       11
 #endif
-#define SERVO1_PIN          6
-#define SERVO2_PIN          5
-#define SERVO3_PIN          4
+//#define SERVO1_PIN          6
+//#define SERVO2_PIN          5
+//#define SERVO3_PIN          4
 
 //
 // Limit Switches
@@ -116,8 +116,8 @@
 //
 // Temperature Sensors
 //
-#define TEMP_0_PIN         13   // Analog Input
-#define TEMP_1_PIN         15   // Analog Input
+#define TEMP_0_PIN         11   // Analog Input
+#define TEMP_1_PIN         10   // Analog Input
 #define TEMP_BED_PIN       14   // Analog Input
 
 // SPI for Max6675 or Max31855 Thermocouple
@@ -207,7 +207,7 @@
 
 #if ENABLED(CASE_LIGHT_ENABLE) && !PIN_EXISTS(CASE_LIGHT) && !defined(SPINDLE_LASER_ENABLE_PIN)
   #if !defined(NUM_SERVOS) || NUM_SERVOS == 0 // try to use servo connector first
-    #define CASE_LIGHT_PIN   6      // MUST BE HARDWARE PWM
+    //#define CASE_LIGHT_PIN   6      // MUST BE HARDWARE PWM
   #elif !(ENABLED(ULTRA_LCD) && ENABLED(NEWPANEL) \
       && (ENABLED(PANEL_ONE) || ENABLED(VIKI2) || ENABLED(miniVIKI) || ENABLED(MINIPANEL) || ENABLED(REPRAPWORLD_KEYPAD)))  // try to use AUX 2
     #define CASE_LIGHT_PIN   44     // MUST BE HARDWARE PWM

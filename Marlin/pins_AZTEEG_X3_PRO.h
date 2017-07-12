@@ -29,7 +29,7 @@
 #endif
 
 #if ENABLED(CASE_LIGHT_ENABLE)  && !PIN_EXISTS(CASE_LIGHT)
-  #define CASE_LIGHT_PIN 44     // must define it here or else RAMPS will define it
+  #define CASE_LIGHT_PIN 11//44     // must define it here or else RAMPS will define it
 #endif
 
 
@@ -98,8 +98,8 @@
 // Temperature Sensors
 //
 #define TEMP_2_PIN         12   // Analog Input
-#define TEMP_3_PIN         11   // Analog Input
-#define TEMP_4_PIN         10   // Analog Input
+#define TEMP_3_PIN         13//11   // Analog Input
+#define TEMP_4_PIN         14//10   // Analog Input
 #define TC1                 4   // Analog Input (Thermo couple on Azteeg X3Pro)
 #define TC2                 5   // Analog Input (Thermo couple on Azteeg X3Pro)
 
@@ -107,17 +107,17 @@
 // Heaters / Fans
 //
 #define HEATER_2_PIN       16
-#define HEATER_3_PIN       17
-#define HEATER_4_PIN        4
-#define HEATER_5_PIN        5
-#define HEATER_6_PIN        6
-#define HEATER_7_PIN       11
+//#define HEATER_3_PIN       17
+//#define HEATER_4_PIN        4
+//#define HEATER_5_PIN        5
+//#define HEATER_6_PIN        6
+//#define HEATER_7_PIN       11
 
 #undef FAN_PIN
-#define FAN_PIN             6 // Part Cooling System
+#define FAN_PIN             17//6 // Part Cooling System
 
 #ifndef CONTROLLER_FAN_PIN
-  #define CONTROLLER_FAN_PIN 4 // Pin used for the fan to cool motherboard (-1 to disable)
+  #define CONTROLLER_FAN_PIN -1 // Pin used for the fan to cool motherboard (-1 to disable)
 #endif
 
 // Fans/Water Pump to cool the hotend cool side.
@@ -167,4 +167,3 @@
   #define SPINDLE_LASER_ENABLE_PIN 20  // Pin should have a pullup!
   #define SPINDLE_DIR_PIN          21
 #endif
-
